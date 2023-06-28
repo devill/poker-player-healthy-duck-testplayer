@@ -1,9 +1,9 @@
 package poker
 
-import org.json.JSONObject
+import kotlinx.serialization.json.JsonObject
 
 class Player {
-    fun betRequest(game_state: JSONObject): Int {
+    fun betRequest(gameState: JsonObject): Int {
         return 0
     }
 
