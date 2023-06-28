@@ -43,40 +43,9 @@ fun main(args: Array<String>) {
     )
 
     val server = app.asServer(Undertow(getPort())).start()
-
-//    var server = AppServer(AppConfiguration(getPort()))
-
-//    server.post("/", {
-//        val action = request.bodyParams["action"]
-//        val result = when (action) {
-//            "bet_request" -> {
-//                val gameState = request.bodyParams["game_state"] as? String
-//
-//                if (gameState == null) {
-//                    "Missing game_state!"
-//                } else {
-//                    val jsonObj = json.decodeFromString(JsonObject.serializer(), gameState)
-//                    player.betRequest(jsonObj).toString()
-//                }
-//            }
-//            "showdown" -> {
-//                player.showdown()
-//                "OK"
-//            }
-//            "version" -> player.version()
-//            else -> "Unknown action '$action'!"
-//        }
-//
-//        response.send(result)
-//    })
-
-//    server.start()
 }
 
 private fun getPort(): Int {
     val port = System.getenv("PORT") ?: "8123"
-
-    println(port)
-
-    return Integer.parseInt(port)
+    return port.toInt()
 }

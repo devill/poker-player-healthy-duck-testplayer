@@ -8,16 +8,13 @@ plugins {
 
 repositories {
   mavenCentral()
-  maven("https://oss.sonatype.org/content/repositories/snapshots")
   maven("https://repository.jetbrains.com/all")
 }
 
 dependencies {
-  implementation("org.wasabi:wasabi:0.1-SNAPSHOT")
   implementation(platform("org.http4k:http4k-bom:5.2.0.0"))
   implementation("org.http4k:http4k-core")
   implementation("org.http4k:http4k-server-undertow")
-  implementation("org.http4k:http4k-server-jetty")
 
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }
@@ -32,7 +29,7 @@ tasks.wrapper {
 }
 
 val stage by tasks.registering {
-  dependsOn(tasks.installShadowDist)
+  dependsOn(tasks.shadowJar)
   group = "build"
 }
 
