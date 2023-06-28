@@ -23,6 +23,17 @@ application {
   mainClass.set("poker.PlayerServiceKt")
 }
 
+java {
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
+  kotlinOptions {
+    jvmTarget = "17"
+  }
+}
+
 tasks.wrapper {
 //  distributionType = Wrapper.DistributionType.ALL
   gradleVersion = "8.1.1"
