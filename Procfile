@@ -1,1 +1,1 @@
-web: java -jar /build/libs/poker-player-kotlin-all.jar
+web: java -jar ./build/libs/poker-player-kotlin-all.jar
